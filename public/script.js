@@ -75,3 +75,12 @@ chatBox.children[0].children[2].addEventListener("click",()=>{
     chatBox.style.display="none";
 })
 
+const userProf=document.querySelector("#userProf");
+const userDropdown=document.querySelector(".userDropdown");
+userProf.addEventListener("click",()=>{
+    if(userDropdown.style.display=="flex"){
+      userDropdown.style.display="none";
+    }else{
+      userDropdown.style.display="flex"
+    }
+})

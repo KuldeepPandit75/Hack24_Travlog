@@ -9,6 +9,8 @@ body {
 }
 
 /* nav bar */
+
+
 .container {
   padding: 0 20px;
   height: 100%;
@@ -28,7 +30,6 @@ video {
   align-items: center;
   justify-content: space-between;
   justify-content: space-evenly;
-  /* z-index: 10; */
   background-color: #ffffff85;
   width: 100%;
 }
@@ -54,7 +55,6 @@ video {
 }
 
 .user:hover {
-  transform: scale(1.1);
   transition: 0.1s ease-in 0s;
   cursor: pointer
 }
@@ -73,6 +73,27 @@ video {
 .user {
   height: 20px;
   font-size: large;
+}
+
+.userDropdown{
+  display:none;
+  flex-direction: column;
+  position: absolute;
+  text-align: center;
+  height: auto;
+  background-color: #ccc;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.userDropdown a{
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+.userDropdown a:hover{
+  cursor:pointer;
 }
 
 #login,
@@ -112,12 +133,15 @@ video {
   transform: scale(1.05);
   transition: 0.2s ease-in-out;
 }
-
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
 #mobileDrop {
   display: none;
 }
 
 /* middle part */
+
 .page1 {
   display: flex;
   align-items: center;
@@ -192,6 +216,7 @@ video {
 }
 
 /* suggestion part*/
+
 .sc {
   display: flex;
   overflow-x: auto;
@@ -218,6 +243,7 @@ video {
 }
 
 /* animation part */
+
 .sponsers {
   animation-name: scroll;
   animation-duration: 15s;
@@ -339,6 +365,7 @@ video {
 }
 
 /* footer part */
+
 .footer {
   width: 100%;
   display: flex;
@@ -524,7 +551,6 @@ video {
 
 /* Signup Page Styling */
 
-/* chatgpt styling for signup page */
 
 #signBody,
 h2,
@@ -609,6 +635,8 @@ label {
 
 #signPara {
   margin-top: 20px;
+align-items: center;
+
   font-size: 14px;
   color: #555;
 }
@@ -739,6 +767,10 @@ label {
 
 /* Company Page Styling */
 
+.moreRev{
+  display: none;
+}
+
 
 .comp-body {
   font-family: Arial, sans-serif;
@@ -747,7 +779,9 @@ label {
   margin: 0;
   padding: 0px;
 }
+
 /* navbar */
+
 nav {
   display: flex;
   background-color: #ccc;
@@ -779,13 +813,13 @@ nav {
   font-weight: 700;
   color: #07070bb6;
 }
-.brand {
+.brandComp {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 10px;
 }
-.brand p {
+.brandComp p {
   font-weight: 900;
   font-size: 28px;
   line-height: 40px;
@@ -797,10 +831,17 @@ nav {
 .nonselected {
   top: -8px;
 }
+
 /* body part */
+
 .container-comp {
   max-width: 900px;
   margin: 5px auto;
+  padding-top: 20px;
+}
+
+.container-comp>h1{
+  padding-bottom: 20px;
 }
 
 .reviews-section,
@@ -865,7 +906,6 @@ nav {
   justify-content: flex-end;
 }
 .extra:hover {
-  transform: scale();
   transition: ease-in;
   transition: 0.2s ease-in-out;
   cursor: pointer;
@@ -891,7 +931,6 @@ nav {
 
 @media (max-width: 710px) {
   * {
-    /* padding: 0 16px 0 16px; */
     margin: auto auto;
   }
 
@@ -948,7 +987,6 @@ nav {
   }
 
   .btn button {
-    /* width: 100%; */
     height: 50px;
     justify-content: center;
   }

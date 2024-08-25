@@ -19,7 +19,9 @@
 </head>
 
 <body>
+
   <!-- nav bar -->
+
   <div class="start">
     <div class="main">
       <video muted autoplay loop src="/elements/travlogVidHD.mov"></video>
@@ -48,15 +50,20 @@
             </div>
             <%}else{%>
               <div class="user">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-user" id="userProf"></i>
+                <div class="userDropdown">
+                  <a href="#">My Booking</a>
+                  <a href="#">Previous trip</a>
+                  <a href="#">Edit profile</a>
+                  <a href="/home">LogOut</a>
+                </div>
               </div>
               <%}%>
-                <img src="/elements/menu.11 1.svg" id="mobileDrop" />
+              <img src="/elements/menu.11 1.svg" id="mobileDrop" />
         </div>
-        <!-- <div class="box">
-          <img src="/elements/Vector.svg" alt="" />
-        </div> -->
+      
         <!-- middle part -->
+
         <div class="page1">
           <div class="description">
             <h2>
@@ -81,7 +88,9 @@
           </div>
         </div>
       </div>
+
       <!-- suggestion  -->
+
       <div class="sc">
         <div class="sponsers">
           <h1><img src="/elements/Group.svg" /></h1>
@@ -158,7 +167,9 @@
           </div>
         </div>
       </div>
+
       <!-- footer part -->
+
       <div class="footer">
         <div class="desFoot">
           <div class="desFoot1">
@@ -246,11 +257,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="/script.js">
-    document.getElementById('send-btn').addEventListener('click', function() {
+    <script src="/script.js">
+      
+      document.getElementById('send-btn').addEventListener('click', function() {
     const userInput = document.getElementById('user-input').value;
     const userMsg=document.createElement("div");
     userMsg.className="message user-message";
@@ -279,6 +291,7 @@
         document.getElementById('chat-messages').appendChild(botMessage);
     })
     .catch(error => console.error('Error:', error));
+
 });
   </script>
 </body>
