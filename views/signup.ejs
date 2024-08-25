@@ -12,6 +12,12 @@
         <h2 id="signWel">Welcome to Travlog!</h2>
         <h3 id="signDet">Enter Your Details:</h3>
         <form id="signForm" method="post" action="/signup">
+            <label id="1">
+                <input type="radio" name="userProp" value="client" id="cliProp">Client
+            </label>
+            <label id="2">
+                <input type="radio" name="userProp" value="company" id="compProp">Company
+            </label>
             <input type="text" name="name" id="signName" placeholder="Enter Your Name">
             <input type="text" name="email" id="signEmail" placeholder="Enter Your Email">
             <input type="text" name="password" id="signPass" placeholder="Enter Your New Password">
@@ -20,5 +26,28 @@
         <p id="signPara">Already have an account! <a href="/login">Log in!</a></p>
     </div>
     <script src="/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+        const clientRadio = document.querySelector("#cliProp");
+        const companyRadio = document.querySelector('#compProp');
+        const signName=document.querySelector("#signName");
+        console.dir(signName);
+        function toggleRollInput() {
+            if (companyRadio.checked) {
+                signName.placeholder = 'Enter Your Company Name';
+            } else {
+                signName.placeholder="Enter Your Name";
+            }
+        }
+
+        clientRadio.addEventListener('change', toggleRollInput);
+        companyRadio.addEventListener('change', toggleRollInput);
+
+        // Initialize the state based on the currently checked radio button
+        toggleRollInput();
+});
+
+    </script>
 </body>
 </html>

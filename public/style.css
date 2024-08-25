@@ -676,7 +676,7 @@ label {
   color: white;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .chat-header img {
@@ -735,6 +735,145 @@ label {
 
 .chat-input button:hover {
   background-color: #0056b3;
+}
+
+/* Company Page Styling */
+
+
+.comp-body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0px;
+}
+/* navbar */
+nav {
+  display: flex;
+  background-color: #ccc;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: #ffffff85;
+  width: 100%;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  z-index:2;
+  width: 35%;
+  height: 17px;
+}
+.nav a:hover {
+  color: black;
+  transition: 0.3s ease-in-out;
+  transform: scale(1.05);
+  font-weight: 800;
+}
+.nav a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #07070bb6;
+}
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.brand p {
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 40px;
+  height: 40px;
+  width: 86px;
+  margin-left: 16px;
+  top: -30px;
+}
+.nonselected {
+  top: -8px;
+}
+/* body part */
+.container-comp {
+  max-width: 900px;
+  margin: 5px auto;
+}
+
+.reviews-section,
+.graph-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.reviews-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reviews-list li {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-text {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.rating {
+  font-size: 1rem;
+  color: #ffd700;
+}
+
+.reviewer-name {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.graph-section {
+  height: 350px;
+  position: relative;
+}
+
+.graph-section {
+  display: flex;
+  justify-content: space-around;
+}
+.overallRating img {
+  height: 250px;
+  margin-top: 50px;
+}
+.overallRating:hover {
+  transition: 0.05 ease-in;
+  cursor: pointer;
+}
+.extra {
+  display: flex;
+  justify-content: flex-end;
+}
+.extra:hover {
+  transform: scale();
+  transition: ease-in;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: underline;
+  color: purple;
+}
+.nav-link.dropdown-toggle::after {
+  display: none;
 }
 
 

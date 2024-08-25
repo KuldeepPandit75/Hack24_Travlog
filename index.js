@@ -55,10 +55,17 @@ app.post("/login",async(req,res)=>{
             pass:pass.trim()
             });
         if(validUser.length!=0){
-            const token=jwt.sign({_id: validUser[0]._id},process.env.SECURITY_KEY_JWT);
-            res
-            .cookie("token",token,{httpOnly:true,secure:true,sameSite:"none"})
-            .redirect(`/${validUser[0]._id}/home`);
+            if(!validUser[0].compStat){
+                const token=jwt.sign({_id: validUser[0]._id},process.env.SECURITY_KEY_JWT);
+                res
+                .cookie("token",token,{httpOnly:true,secure:true,sameSite:"none"})
+                .redirect(`/${validUser[0]._id}/home`);
+            }else{
+                const token=jwt.sign({_id: validUser[0]._id},process.env.SECURITY_KEY_JWT);
+                res
+                .cookie("token",token,{httpOnly:true,secure:true,sameSite:"none"})
+                .redirect(`/${validUser[0]._id}/compHome`);
+            }
         }else{
             res.send("Invalid User");
         }
@@ -77,12 +84,13 @@ app.get("/signup",(req,res)=>{
 
 app.post("/signup",async(req,res)=>{
     try{
-        let { name,email,password } = req.body;
+        let { name,email,password,userProp } = req.body;
 
                 let newUser = new User({
                     name: name.toLowerCase(),
                     email: email.toLowerCase(),
-                    pass: password
+                    pass: password,
+                    compStat: userProp==="client"?false:true
                 });
                 newUser.save()
                 .then((res)=>{
@@ -98,6 +106,11 @@ app.post("/signup",async(req,res)=>{
     }
 });
 
+app.get("/:id/compHome",verifyToken,async(req,res)=>{
+    let {id}=req.params;
+    let user= await User.findById(id);
+    res.render("compHome.ejs",{id,user});
+})
 app.get("/:id/home",verifyToken,(req,res)=>{
     let {id}=req.params;
     res.render("home.ejs",{id});

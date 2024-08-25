@@ -41,7 +41,7 @@ gsap.from(".navbar", {
 
     document.getElementById("chat-messages").appendChild(userMsg);
     // Send the user input to the backend API
-    fetch('http://127.0.0.1:5000/predict', {  // Replace with your backend URL
+    fetch('http://127.0.0.1:5000/predictu', {  // Replace with your backend URL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -66,11 +66,12 @@ gsap.from(".navbar", {
 let chatBotIcon=document.getElementsByClassName("chatBoat");
 let chatBox=document.querySelector(".chat-container");
 chatBotIcon[0].addEventListener("click",function(){
-  if(chatBotIcon[0].style.display!=="none"){
     chatBotIcon[0].style.display="none";
     chatBox.style.display="flex";
-  }else{
-    chatBotIcon[0].style.display="inline-block";
-    chatBox.style.display="none";
-  }
 })
+
+chatBox.children[0].children[2].addEventListener("click",()=>{
+  chatBotIcon[0].style.display="inline-block";
+    chatBox.style.display="none";
+})
+
