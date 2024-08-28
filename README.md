@@ -14,8 +14,8 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-repository/ai-chatbot-web-app.git
-cd ai-chatbot-web-app
+git clone [https://github.com/KuldeepPandit75/Hack24_Travlog.git](https://github.com/KuldeepPandit75/Hack24_Travlog.git)
+cd Hack24_Travlog
 Install Dependencies: Run the following command to install the necessary packages:
 
 bash
