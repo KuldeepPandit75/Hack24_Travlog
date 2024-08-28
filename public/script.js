@@ -64,16 +64,22 @@ gsap.from(".navbar", {
 });
 
 let chatBotIcon=document.getElementsByClassName("chatBoat");
-let chatBox=document.querySelector(".chat-container");
-chatBotIcon[0].addEventListener("click",function(){
-    chatBotIcon[0].style.display="none";
-    chatBox.style.display="flex";
-})
+// let chatBox=document.querySelector(".chat-container");
+// chatBotIcon[0].addEventListener("click",function(){
+//     chatBox.classList.add("chatContTransition");
+// })
 
-chatBox.children[0].children[2].addEventListener("click",()=>{
-  chatBotIcon[0].style.display="inline-block";
-    chatBox.style.display="none";
-})
+// chatBox.children[0].children[2].addEventListener("click",()=>{
+//   chatBox.classList.remove("chatContTransition")
+// })
+
+function chatBotTransition() {
+  let chatBox = document.querySelector(".chat-container");
+  let chatIcon=document.querySelector(".chatBoat");
+  chatIcon.classList.toggle("chatBot2");
+  chatBox.classList.toggle("chatContTransition");
+
+}
 
 const userProf=document.querySelector("#userProf");
 const userDropdown=document.querySelector(".userDropdown");

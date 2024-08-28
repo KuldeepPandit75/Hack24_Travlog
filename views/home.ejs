@@ -15,7 +15,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Raleway&display=swap"
     rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -30,9 +32,9 @@
         <div class="navbar">
           <div class="brand">
             <img class="box" src="/elements/Vector.svg" height="40px" />
-            <p class="na" id="brand">Travlog</p>
+            <p>Travlog</p>
           </div>
-          <div class="nav na">
+          <div class="nav">
             <a href="/home" id="selected" style="color:black;transform: scale(1.04);">Home</a>
             <a href="/home" class="nonselected">Discover</a>
             <a href="/home" class="nonselected">Special Deals</a>
@@ -59,9 +61,9 @@
                 </div>
               </div>
               <%}%>
-              <img src="/elements/menu.11 1.svg" id="mobileDrop" />
+                <img src="/elements/menu.11 1.svg" id="mobileDrop" />
         </div>
-      
+
         <!-- middle part -->
 
         <div class="page1">
@@ -221,78 +223,78 @@
 
   <!-- Chat Bot -->
 
-  <div class="chatBoat">
+  <div class="chatBoat" onclick="chatBotTransition()">
     <img src="/elements/robot-assistant.png" alt="" />
   </div>
 
   <div class="chat-container">
     <%if(id!=="none"){%>
-    <div class="chat-header">
-      <img src="/elements/robot-assistant.png" alt="" />
-      <h3>Chat Bot</h3>
-      <i class="fa-solid fa-xmark"></i>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-      <div class="message bot-message">Hello! Specify Your Problem</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Type a message..." />
-      <button id="send-btn">Send</button>
-    </div>
-    <%}else{%>
       <div class="chat-header">
         <img src="/elements/robot-assistant.png" alt="" />
         <h3>Chat Bot</h3>
-        <i class="fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark" onclick="chatBotTransition()"></i>
       </div>
       <div class="chat-messages" id="chat-messages">
-        <div class="message bot-message">Login to use chatbot!</div>
+        <div class="message bot-message">Hello! Specify Your Problem</div>
       </div>
-      <div class="chat-input" style="display: none;">
+      <div class="chat-input">
         <input type="text" id="user-input" placeholder="Type a message..." />
         <button id="send-btn">Send</button>
       </div>
-    <%}%>
+      <%}else{%>
+        <div class="chat-header">
+          <img src="/elements/robot-assistant.png" alt="" />
+          <h3>Chat Bot</h3>
+          <i class="fa-solid fa-xmark" onclick="chatBotTransition()"></i>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="message bot-message">Login to use chatbot!</div>
+        </div>
+        <div class="chat-input" style="display: none;">
+          <input type="text" id="user-input" placeholder="Type a message..." />
+          <button id="send-btn">Send</button>
+        </div>
+        <%}%>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/script.js">
-      
-      document.getElementById('send-btn').addEventListener('click', function() {
-    const userInput = document.getElementById('user-input').value;
-    const userMsg=document.createElement("div");
-    userMsg.className="message user-message";
-    userMsg.textContent=userInput;
-    document.getElementById('user-input').value=""
+  <script src="/script.js">
 
-    document.getElementById("chat-messages").appendChild(userMsg);
-    // Send the user input to the backend API
-    fetch('http://127.0.0.1:5000/predictu', {  // Replace with your backend URL
+    document.getElementById('send-btn').addEventListener('click', function () {
+      const userInput = document.getElementById('user-input').value;
+      const userMsg = document.createElement("div");
+      userMsg.className = "message user-message";
+      userMsg.textContent = userInput;
+      document.getElementById('user-input').value = ""
+
+      document.getElementById("chat-messages").appendChild(userMsg);
+      // Send the user input to the backend API
+      fetch('http://127.0.0.1:5000/predictu', {  // Replace with your backend URL
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({ message: userInput })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      console.log(data["answer"]);
-        // Display the AI's response in the chat
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          console.log(data["answer"]);
+          // Display the AI's response in the chat
 
-        const botMessage = document.createElement('div');
-        botMessage.className = 'message bot-message';
-        botMessage.textContent = data.answer;
+          const botMessage = document.createElement('div');
+          botMessage.className = 'message bot-message';
+          botMessage.textContent = data.answer;
 
-        document.getElementById('chat-messages').appendChild(botMessage);
-    })
-    .catch(error => console.error('Error:', error));
+          document.getElementById('chat-messages').appendChild(botMessage);
+        })
+        .catch(error => console.error('Error:', error));
 
-});
+    });
   </script>
 </body>
 

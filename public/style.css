@@ -32,6 +32,7 @@ video {
   justify-content: space-evenly;
   background-color: #ffffff85;
   width: 100%;
+  border-radius: 0 0 10px 10px;
 }
 
 .nav {
@@ -110,6 +111,7 @@ video {
 #login {
   background-color: white;
   font-weight: 700;
+  margin-right:20px;
 }
 
 #signup {
@@ -445,15 +447,17 @@ video {
 .container-login {
   display: grid;
   place-items: center;
-  margin-top: 50px;
-  height: 80vh;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
 .loginBox {
   width: 500px;
-  height: 500px;
-  border: 0.7px solid black;
+  height: 495px;
+  /* border: 0.7px solid black; */
   border-radius: 20px;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.103);
+  background-color: white;
 }
 
 .loginBox>p {
@@ -496,7 +500,7 @@ video {
 
 .detailLog {
   width: 100%;
-  height: 270px;
+  height: 27  0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -511,8 +515,9 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 250px;
-  justify-content: space-evenly;
+  height: 200px;
+  justify-content: space-between;
+  margin-top:20px
 }
 
 .input input {
@@ -523,22 +528,18 @@ video {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.detailog-butt {
-  margin-left: 80px;
-}
-
-.detailog-butt button {
+.detailog-butt button{
   background-color: white;
   border: none;
   font-size: 16px;
   border-radius: 10px;
   width: 170px;
   height: 36px;
-  background-image: linear-gradient(to right, #439aff, #2110e174);
-  margin-left: 80px;
+  background-image: linear-gradient(to right, #de75a0, #5f51be);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.123);
   transition: 0.5s ease 0s;
   transition-property: transform, box-shadow;
+  color: white;
 }
 
 #pafterLog {
@@ -626,19 +627,25 @@ label {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
+  transition-property: background-color,box-shadow,transform;
+  background-image: linear-gradient(to right, #de75a0, #5f51be);
 }
 
 #signBtn:hover {
   background-color: #0056b3;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.583);
+  transform: scale(1.05);
 }
 
-#signPara {
-  margin-top: 20px;
-align-items: center;
 
+#signPara {
+  margin-top: 40px;
+  align-items: center;
   font-size: 14px;
   color: #555;
+  display: inline-block;
+  text-align: center;
 }
 
 #signPara a {
@@ -659,6 +666,10 @@ align-items: center;
   z-index: 1000;
   background-color: rgba(245, 222, 179, 0.402);
   border-radius: 30px;
+}
+
+.chatBot2{
+  display:none;
 }
 
 .chatBoat img {
@@ -694,8 +705,15 @@ align-items: center;
   display: none;
   flex-direction: column;
   position: fixed;
-  bottom: 20px;
+  bottom: -500px;
   left: 70vw;
+  transition: all 2s ease-in 2s;
+}
+
+.chat-container.chatContTransition{
+  bottom:20px;
+  display:flex;
+  transition: all 2s ease-in 2s;
 }
 
 .chat-header {
@@ -771,44 +789,43 @@ align-items: center;
   display: none;
 }
 
+#compNavHover:hover{
+  transform: scale(1.05);
+  transition: 0.05s ease-in 0s;
+}
+
+#compNavHover2:hover{
+  color:rgba(0, 0, 0, 0.90);
+  transition: color 0.05s ease-in 0s;
+}
 
 .comp-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: "Merriweather Sans", sans-serif;
+  background-color: #ccc;
   color: #333;
   margin: 0;
-  padding: 0px;
+  padding: 0 20px;
 }
 
-/* navbar */
-
-nav {
-  display: flex;
-  background-color: #ccc;
-}
-.navbar {
+.navbarComp {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  justify-content: space-evenly;
   background-color: #ffffff85;
   width: 100%;
+  border-radius: 0 0 10px 10px;
+  display: flex;
 }
-.nav {
+.navComp {
   display: flex;
   justify-content: space-between;
-  margin-right: 20px;
+  margin-right: 90px;
   z-index:2;
   width: 35%;
   height: 17px;
 }
-.nav a:hover {
-  color: black;
-  transition: 0.3s ease-in-out;
-  transform: scale(1.05);
-  font-weight: 800;
-}
-.nav a {
+
+.navComp a {
   text-decoration: none;
   font-weight: 700;
   color: #07070bb6;
@@ -817,16 +834,18 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 150px;
+  height: 88px;
 }
 .brandComp p {
   font-weight: 900;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 40px;
   height: 40px;
   width: 86px;
+  margin:0;
   margin-left: 16px;
-  top: -30px;
+  color:black;
 }
 .nonselected {
   top: -8px;
