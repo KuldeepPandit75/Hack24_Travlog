@@ -4,7 +4,7 @@ import os
 import google.generativeai as genai
 
 # Configure the API key
-genai.configure(api_key="AIzaSyCmnIvcUl3kUow8mnJIsOWuivm_v9nVfpY")
+genai.configure(api_key="AIzaSyBBNkD1EN-d9ibioxvm1y0cYfenY2xyQ1o")
 
 # Create the model configuration
 generation_config = {
@@ -31,6 +31,13 @@ if chat_session is None:
     model = genai.GenerativeModel(
         model_name="gemini-1.5-flash",
         generation_config=generation_config,
+
+        # #VedicVerse Instruction
+
+        # system_instruction="user will give you a sanskrit shlok you just need to give its deep and detailed and full translation in hindi nothing else no greeting no being smart no improv ",
+
+        # Travlog instruction
+
         system_instruction="if user logged in as client act as a public service problem solver for our company travelog which provide services related to travel, greet the user with salutation everytime, ask one question at a time about the issue faced and ask for details about problem so that we can solve it correctly give him a random from 1 lakh to 2 lakh reference id and apologize for inconvenience caused dont ask the user long question ask the user for email for future contact and after getting specific details say we will communicate to your email shortly your complaint has been registered else if user logged in as company act as a data updater, read the name of company from the email and collect all the complaints related to the company, when informed and change the data accordingly of the user with respect to their particular email on behalf of admin",
     )
     chat_session = model.start_chat(history=[])
